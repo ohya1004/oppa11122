@@ -47,7 +47,7 @@ def application(environ, start_response):
     # check request path
     if environ['PATH_INFO'] != '/callback':
         start_response('404 Not Found', [])
-        return create_body('Not Found')
+        return create_body('Not Found><')
 
     # check request method
     if environ['REQUEST_METHOD'] != 'POST':
