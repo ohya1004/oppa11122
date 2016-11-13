@@ -14,7 +14,7 @@
 
 import os
 import sys
-import wsgiref.simple_server
+#import wsgiref.simple_server
 from argparse import ArgumentParser
 
 from builtins import bytes
@@ -92,12 +92,3 @@ def create_body(text):
         return text
 
 
-if __name__ == '__main__':
-    arg_parser = ArgumentParser(
-        usage='Usage: python ' + __file__ + ' [--port <port>] [--help]'
-    )
-    arg_parser.add_argument('-p', '--port', default=8000, help='port')
-    options = arg_parser.parse_args()
-
-    httpd = wsgiref.simple_server.make_server('', options.port, application)
-    httpd.serve_forever()
